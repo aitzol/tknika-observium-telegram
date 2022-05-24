@@ -89,17 +89,95 @@
                             </li>
                         </ul>
                     </section>
-                    <section><strong>Zalantzarik?</strong><p></p></section>
+                    <section><strong>Zalantzarik?</strong></section>
                 </section>
 
 				<section>
-                    <section>Notifikazioak Telegram kanal batean jaso</section>
+                    <section><strong>Notifikazioak Telegram kanal batean jaso</strong></section>
+                    <section>
+                        <strong>Helburua</strong>
+                        <ul>
+                            <li>Observium notifikazioak Telegram kanal batean jaso</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <strong>Pausuak</strong>
+                        <ol>
+                            <li>Sortu Telegram bot-a</li>
+                            <li>Sortu notifikazioak jasotzeko taldea</li>
+                            <li>Gehitu sortu berri den bot-a taldera</li>
+                            <li>Observium kontaktu bat konfiguratu Telegramera alertak bidaltzeko</li>
+                            <li>Test</li>
+                        </ol>
+                    </section>
                 </section>
                 <section>
-                    <section>Telegram bot baten garapena</section>
+                    <section><strong>Telegram bot baten garapena</strong></section>
+                    <section>
+                        <strong>Helburuak</strong>
+                        <ul>
+                            <li>Telegram bot-ek eskaintzen dituzten elkareragiketa modu batzuk ezagutu</li>
+                            <li><a href="https://core.telegram.org/bots/api">Telegram bot APIa</a> inplementatzen duten <a href="https://python-telegram-bot.org/">python-telegram-bot</a> liburutegia ezagutu</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <strong>Pausuak</strong>
+                        <ol>
+                            <li>Klonatu <a href="https://github.com/aitzol/telegram-bot-txantiloia">hezurdura repositorioa</a></li>
+                            <li>Joan osatzen proposatutako eragiketa bakoitza, gidoia + <a href="https://docs.python-telegram-bot.org/en/v20.0a0/">liburutegiaren laguntza</a> erabiliz</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <strong>Oinarrizko kodea</strong>
+                    </section>
+                    <section>
+                        <pre>
+                            <code data-trim data-noescape style="max-height: 100%;">
+                                from dotenv import load_dotenv, find_dotenv
+                                import os
+                                load_dotenv(find_dotenv())
+
+                                from telegram.ext import (Updater, CommandHandler)
+
+                                def start(update, context):
+                                    ''' START '''
+                                    # Hemen gehitu komandoaren egin beharrekoa
+                                    
+                                def main():
+                                    # Hasieraketa
+                                    TOKEN=os.get("TELEGRAM_TOKEN")
+                                    updater=Updater(TOKEN, use_context=True)
+
+                                    # Robotak erantzungo dituen ebentuak.
+                                    updater.dispatcher.add_handler(CommandHandler('start',	start))
+
+                                    # Arrankatu bot-a. Bi funtzionamendu era polling edo webhook 
+                                    updater.start_polling()
+                                    # updater.start_webhook()
+                                    # Ebentuen zain itxaron
+                                    updater.idle()
+
+                                if __name__ == '__main__':
+                                    main()
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <strong>Proposatutako eragiketak</strong>
+                        <ol>
+                            <li>Oinarrizko komando bat</li>
+                            <li>Mezuei erantzun</li>
+                            <li>Parametrodun komandoak</li>
+                            <li>Custom teklatuak</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <strong>Proposatutako kodea</strong>
+                        <p><a href="https://github.com/aitzol/telegram-bot">Repositorio honetan</a> branch desberdinetan</p>
+                    </section>
                 </section>
                 <section>
-                    <section>Ebentu kudeaketarako web API-a</section>
+                    <section><strong>Ebentu kudeaketarako web API-a</strong></section>
                 </section>
 			</div>
 		</div>
