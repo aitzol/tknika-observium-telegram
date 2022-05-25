@@ -110,6 +110,7 @@
                             <li>Test</li>
                         </ol>
                     </section>
+                    <section><strong>Proposatutako iraupena: Ordubete</strong></section>
                 </section>
                 <section>
                     <section><strong>Telegram bot baten garapena</strong></section>
@@ -128,7 +129,7 @@
                         </ol>
                     </section>
                     <section>
-                        <strong>Oinarrizko kodea</strong>
+                        <strong>Oinarrizko kodearen azalpena</strong>
                     </section>
                     <section>
                         <pre>
@@ -171,6 +172,7 @@
                             <li>Custom teklatuak</li>
                         </ol>
                     </section>
+                    <section><strong>Proposatutako iraupena: Bi ordu</strong></section>
                     <section>
                         <strong>Proposatutako kodea</strong>
                         <p><a href="https://github.com/aitzol/telegram-bot">Repositorio honetan</a> branch desberdinetan</p>
@@ -178,6 +180,61 @@
                 </section>
                 <section>
                     <section><strong>Ebentu kudeaketarako web API-a</strong></section>
+                    <section>
+                        <strong>Helburua</strong>
+                        <ul>
+                            <li>Guztiz gure esku dagoen ebentu kudeaketa sistema proposatu</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <strong>Pausuak</strong>
+                        <ol>
+                            <li>Klonatu <a href="https://github.com/aitzol/observium-api-txantiloia">hezurdura repositorioa</a></li>
+                            <li>Osatu src/app.py fitxategia proposatutako erronka (edo gustoko duzuen besteren bat) betetzeko</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <strong>Oinarrizko kodearen azalpena</strong>
+                        <pre>
+                            <code data-trim data-noescape style="max-height: 100%;">
+                                import json
+                                import telegram
+                                import os
+                                from dotenv import load_dotenv, find_dotenv
+                                load_dotenv(find_dotenv())
+                                
+                                from flask import Flask, request
+                                app = Flask(__name__)
+                                
+                                @app.route('/', methods=['POST'])
+                                def notifikazioa():
+                                    data = json.loads(request.data)
+                                
+                                    return "", 204
+                                 
+                                app.run(host='0.0.0.0')
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <strong>Proposatutako erronka</strong>
+                        <p>Observium-ek bidalitako alertak Telegrameko kanalera bidali <strong>baldin eta soilik baldin</strong> lan ordutegiaren barruan gauden (demagun astegunak 9:00 – 17:00) edo alertaren maila ‘Critical’ den.
+                        </p>
+                    </section>
+                    <section>
+                        <strong>Proposatutako iraupena: Bi ordu</strong>
+                    </section>
+                    <section>
+                        <strong>Proposatutako kodea</strong>
+                        <p><a href="https://github.com/aitzol/observium-api">Repositorio honetan</a></p>
+                    </section>
+                </section>
+                <section>
+                    <strong>Laburbilduz</strong>
+                </section>
+                <section>
+                    <strong>Zalantza, galdera, komentario edo bestelakorik?</strong>
+                    <img src="piedras-vida-brian.gif" />
                 </section>
 			</div>
 		</div>
