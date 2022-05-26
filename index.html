@@ -146,7 +146,7 @@
                                     
                                 def main():
                                     # Hasieraketa
-                                    TOKEN=os.get("TELEGRAM_TOKEN")
+                                    TOKEN=os.environ.get("TELEGRAM_TOKEN")
                                     updater=Updater(TOKEN, use_context=True)
 
                                     # Robotak erantzungo dituen ebentuak.
